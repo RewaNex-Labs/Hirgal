@@ -1,52 +1,77 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hirgal empowers women entrepreneurs to manage, learn and grow their businesses.">
     <title>Hirgal | Grow Your Business</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <a href="#" class="logo">Hirgal<span>.</span></a>
+    <!-- PUBLIC NAVBAR -->
+    <header class="navbar" id="publicNavbar">
+        <a href="#home" class="logo">Hirgal<span>.</span></a>
 
         <nav>
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#features">Our Services</a>
+            <a href="#vision">Our Vision</a>
         </nav>
 
         <div class="nav-actions">
-            <button id="languageBtn">SO</button>
-            <a href="#login" class="login-btn">Login</a>
-            <a href="#register" class="signup-btn">Get Started</a>
+            <button id="languageBtn" type="button">SO</button>
+            <a href="#login" class="login-btn" data-page="login">Login</a>
+            <a href="#register" class="signup-btn" data-page="register">Join Hirgal</a>
         </div>
     </header>
 
-    <main>
+    <!-- PUBLIC HOME -->
+    <main id="publicPage">
+
         <section class="hero" id="home">
             <div class="hero-content">
-                <p class="eyebrow">EMPOWERING WOMEN ENTREPRENEURS</p>
+                <p class="eyebrow">WELCOME TO HIRGAL</p>
 
-                <h1>From Home Kitchen to
-                    <span>Successful Business.</span>
+                <h1>
+                    Big dreams can start at home.
                 </h1>
 
                 <p class="hero-description">
-                    Your ideas deserve to grow. Learn business skills,
-                    manage your finances and connect with mentors
-                    through one simple platform.
+                    Your small business deserves a big future.
+                    Hirgal gives women entrepreneurs the tools,
+                    knowledge, and connections to turn their ideas
+                    into thriving businesses.
                 </p>
 
                 <div class="hero-buttons">
-                    <a href="#register" class="signup-btn">Start Your Journey</a>
-                    <a href="#features" class="learn-btn">Explore Hirgal</a>
+                    <a href="#register" class="signup-btn" data-page="register">
+                        Get Started
+                    </a>
+
+                    <a href="#login" class="learn-btn" data-page="login">
+                        Login to Your Account →
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!-- ABOUT -->
+        <section class="features" id="about">
+            <div class="section-heading">
+                <p class="eyebrow">ABOUT HIRGAL</p>
+                <h2>Supporting women, one business at a time.</h2>
+                <p>
+                    Hirgal is a platform created to support women
+                    entrepreneurs by bringing business management,
+                    mentorship, and learning opportunities together
+                    in one place.
+                </p>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
         <section class="features" id="features">
             <div class="section-heading">
                 <p class="eyebrow">WHAT WE OFFER</p>
@@ -54,28 +79,429 @@
             </div>
 
             <div class="feature-grid">
+
                 <article class="feature-card">
                     <h3>SheMentor</h3>
-                    <p>Connect with mentors and receive practical business guidance.</p>
+                    <p>
+                        Connect with mentors and receive practical
+                        business guidance from experienced professionals.
+                    </p>
                 </article>
 
                 <article class="feature-card">
                     <h3>FoodBiz</h3>
-                    <p>Calculate your costs, set prices and understand your profit.</p>
+                    <p>
+                        Manage products, record sales, track expenses,
+                        and understand your business profit.
+                    </p>
                 </article>
 
                 <article class="feature-card">
                     <h3>BizPath</h3>
-                    <p>Learn essential business skills through simple lessons.</p>
+                    <p>
+                        Learn essential business skills through
+                        practical courses and simple lessons.
+                    </p>
                 </article>
+
             </div>
+        </section>
+
+        <!-- VISION -->
+        <section class="features vision-section" id="vision">
+            <div class="section-heading">
+                <p class="eyebrow">OUR VISION</p>
+                <h2>Empowering women. Growing businesses. Building futures.</h2>
+                <p>
+                    We believe every woman deserves access to business
+                    knowledge, mentorship, and digital tools that help
+                    her turn an idea into an opportunity.
+                </p>
+
+                <a href="#register" class="signup-btn" data-page="register">
+                    Join Hirgal Today
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- AUTHENTICATION -->
+    <main id="authPage" class="app-page hidden">
+
+        <section class="auth-container">
+
+            <a href="#home" class="logo">Hirgal<span>.</span></a>
+
+            <!-- LOGIN -->
+            <form id="loginForm" class="auth-form hidden">
+                <h2>Welcome back!</h2>
+                <p>Log in to continue growing your business.</p>
+
+                <div id="loginMessage" class="form-message"></div>
+
+                <label for="loginEmail">Email address</label>
+                <input type="email" id="loginEmail" required>
+
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit" class="signup-btn">
+                    Login
+                </button>
+
+                <p>
+                    Don't have an account?
+                    <a href="#register" data-page="register">Create one</a>
+                </p>
+
+                <a href="#home" data-page="home">← Back to home</a>
+            </form>
+
+            <!-- REGISTER -->
+            <form id="registerForm" class="auth-form hidden">
+                <h2>Create your account</h2>
+                <p>Start your business journey with Hirgal.</p>
+
+                <div id="registerMessage" class="form-message"></div>
+
+                <label for="registerName">Full name</label>
+                <input type="text" id="registerName" required>
+
+                <label for="registerEmail">Email address</label>
+                <input type="email" id="registerEmail" required>
+
+                <label for="registerPassword">Password</label>
+                <input type="password" id="registerPassword" required>
+
+                <label for="confirmPassword">Confirm password</label>
+                <input type="password" id="confirmPassword" required>
+
+                <button type="submit" class="signup-btn">
+                    Create Account
+                </button>
+
+                <p>
+                    Already have an account?
+                    <a href="#login" data-page="login">Login</a>
+                </p>
+
+                <a href="#home" data-page="home">← Back to home</a>
+            </form>
+
         </section>
     </main>
 
-    <footer>
+    <!-- DASHBOARD APPLICATION -->
+    <div id="dashboardPage" class="dashboard-layout hidden">
+
+        <aside class="sidebar">
+            <a href="#dashboard" class="logo">Hirgal<span>.</span></a>
+
+            <p class="sidebar-label">WORKSPACE</p>
+
+            <nav class="sidebar-nav">
+                <button class="sidebar-link active" data-view="dashboard">
+                    Dashboard
+                </button>
+
+                <button class="sidebar-link" data-view="foodbiz">
+                    FoodBiz
+                </button>
+
+                <button class="sidebar-link" data-view="shementor">
+                    SheMentor
+                </button>
+
+                <button class="sidebar-link" data-view="bizpath">
+                    BizPath
+                </button>
+
+                <button class="sidebar-link" data-view="profile">
+                    My Profile
+                </button>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <button id="logoutBtn" class="sidebar-link logout-btn">
+                    Logout
+                </button>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+
+            <header class="dashboard-topbar">
+                <div>
+                    <p class="eyebrow">HIRGAL WORKSPACE</p>
+                    <h2 id="pageTitle">Dashboard</h2>
+                </div>
+
+                <div class="user-info">
+                    <span id="userInitials">H</span>
+                    <strong id="topbarUserName">Welcome</strong>
+                </div>
+            </header>
+
+            <div id="dashboardContent">
+
+                <!-- DASHBOARD OVERVIEW -->
+                <section id="view-dashboard" class="dashboard-view">
+                    <div class="welcome-section">
+                        <p class="eyebrow">YOUR BUSINESS JOURNEY</p>
+                        <h2>Welcome back, <span id="welcomeName">Entrepreneur</span>!</h2>
+                        <p>Here's an overview of your business activity.</p>
+                    </div>
+
+                    <div class="stats-grid">
+                        <article class="stat-card">
+                            <p>Total Products</p>
+                            <h3 id="totalProducts">0</h3>
+                        </article>
+
+                        <article class="stat-card">
+                            <p>Total Sales</p>
+                            <h3 id="totalSales">0.00</h3>
+                        </article>
+
+                        <article class="stat-card">
+                            <p>Total Expenses</p>
+                            <h3 id="totalExpenses">0.00</h3>
+                        </article>
+
+                        <article class="stat-card">
+                            <p>Estimated Profit</p>
+                            <h3 id="totalProfit">0.00</h3>
+                        </article>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h3>Quick Access</h3>
+
+                        <div class="quick-access-grid">
+                            <button data-view="foodbiz" class="quick-card">
+                                <h3>FoodBiz</h3>
+                                <p>Manage your business finances.</p>
+                            </button>
+
+                            <button data-view="shementor" class="quick-card">
+                                <h3>SheMentor</h3>
+                                <p>Find guidance and mentorship.</p>
+                            </button>
+
+                            <button data-view="bizpath" class="quick-card">
+                                <h3>BizPath</h3>
+                                <p>Explore business courses.</p>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h3>Recent Activity</h3>
+                        <div id="recentActivity" class="activity-list">
+                            <p>No recent activity yet.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FOODBIZ -->
+                <section id="view-foodbiz" class="dashboard-view hidden">
+                    <div class="module-heading">
+                        <div>
+                            <p class="eyebrow">BUSINESS MANAGEMENT</p>
+                            <h2>FoodBiz</h2>
+                            <p>Manage your products, sales and expenses.</p>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <article class="stat-card">
+                            <p>Revenue</p>
+                            <h3 id="foodRevenue">0.00</h3>
+                        </article>
+
+                        <article class="stat-card">
+                            <p>Expenses</p>
+                            <h3 id="foodExpenses">0.00</h3>
+                        </article>
+
+                        <article class="stat-card">
+                            <p>Profit</p>
+                            <h3 id="foodProfit">0.00</h3>
+                        </article>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h3>Add a Product</h3>
+
+                        <form id="productForm" class="app-form">
+                            <input type="hidden" id="productId">
+
+                            <label for="productName">Product name</label>
+                            <input type="text" id="productName" required>
+
+                            <label for="productDescription">Description</label>
+                            <textarea id="productDescription"></textarea>
+
+                            <label for="productPrice">Price</label>
+                            <input type="number" id="productPrice" min="0" step="0.01" required>
+
+                            <label for="productQuantity">Quantity available</label>
+                            <input type="number" id="productQuantity" min="0" required>
+
+                            <button type="submit" class="signup-btn" id="productSubmitBtn">
+                                Add Product
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h3>Your Products</h3>
+                        <div id="productList" class="data-list"></div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h3>Record a Sale</h3>
+
+                        <form id="saleForm" class="app-form">
+                            <label for="saleProduct">Select product</label>
+                            <select id="saleProduct" required>
+                                <option value="">Choose a product</option>
+                            </select>
+
+                            <label for="saleQuantity">Quantity sold</label>
+                            <input type="number" id="saleQuantity" min="1" required>
+
+                            <p id="saleTotal">Sale total: 0.00</p>
+
+                            <button type="submit" class="signup-btn">
+                                Record Sale
+                            </button>
+                        </form>
+
+                        <div id="salesList" class="data-list"></div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <h3>Add an Expense</h3>
+
+                        <form id="expenseForm" class="app-form">
+                            <label for="expenseName">Expense description</label>
+                            <input type="text" id="expenseName" required>
+
+                            <label for="expenseAmount">Amount</label>
+                            <input type="number" id="expenseAmount" min="0.01" step="0.01" required>
+
+                            <label for="expenseDate">Date</label>
+                            <input type="date" id="expenseDate" required>
+
+                            <button type="submit" class="signup-btn">
+                                Add Expense
+                            </button>
+                        </form>
+
+                        <div id="expenseList" class="data-list"></div>
+                    </div>
+                </section>
+
+                <!-- SHEMENTOR -->
+                <section id="view-shementor" class="dashboard-view hidden">
+                    <p class="eyebrow">GROW WITH GUIDANCE</p>
+                    <h2>SheMentor</h2>
+                    <p>Discover experienced mentors who can support your journey.</p>
+
+                    <div class="mentor-filters">
+                        <input type="search" id="mentorSearch" placeholder="Search mentors...">
+
+                        <select id="mentorCategory">
+                            <option value="">All expertise</option>
+                            <option value="Business Management">Business Management</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Technology">Technology</option>
+                            <option value="Entrepreneurship">Entrepreneurship</option>
+                            <option value="Leadership">Leadership</option>
+                        </select>
+                    </div>
+
+                    <div id="mentorList" class="mentor-grid"></div>
+
+                    <div class="dashboard-section">
+                        <h3>My Mentorship Requests</h3>
+                        <div id="mentorshipRequests" class="data-list"></div>
+                    </div>
+                </section>
+
+                <!-- BIZPATH -->
+                <section id="view-bizpath" class="dashboard-view hidden">
+                    <p class="eyebrow">LEARN AND GROW</p>
+                    <h2>BizPath</h2>
+                    <p>Build practical skills for your business journey.</p>
+
+                    <div class="progress-card">
+                        <h3>Your Learning Progress</h3>
+                        <div class="progress-track">
+                            <div id="learningProgressBar" class="progress-fill"></div>
+                        </div>
+                        <p id="learningProgressText">0% completed</p>
+                    </div>
+
+                    <div id="courseList" class="course-grid"></div>
+
+                    <div id="lessonArea" class="dashboard-section hidden"></div>
+                </section>
+
+                <!-- PROFILE -->
+                <section id="view-profile" class="dashboard-view hidden">
+                    <p class="eyebrow">YOUR ACCOUNT</p>
+                    <h2>My Profile</h2>
+
+                    <form id="profileForm" class="app-form">
+                        <label for="profileName">Full name</label>
+                        <input type="text" id="profileName" required>
+
+                        <label for="profileEmail">Email address</label>
+                        <input type="email" id="profileEmail" required>
+
+                        <button type="submit" class="signup-btn">
+                            Save Changes
+                        </button>
+
+                        <div id="profileMessage" class="form-message"></div>
+                    </form>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- MENTORSHIP REQUEST MODAL -->
+    <div id="mentorModal" class="modal hidden">
+        <div class="modal-content">
+            <button type="button" id="closeMentorModal" class="modal-close">×</button>
+
+            <h2>Request Mentorship</h2>
+            <p id="selectedMentorName"></p>
+
+            <form id="mentorRequestForm">
+                <input type="hidden" id="selectedMentorId">
+
+                <label for="mentorMessage">Tell the mentor how they can help you.</label>
+                <textarea id="mentorMessage" rows="5" required maxlength="500"></textarea>
+
+                <button type="submit" class="signup-btn">
+                    Send Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer id="publicFooter">
         <p>© 2026 Hirgal. Empowering women to grow.</p>
     </footer>
 
+    <script src="js/storage.js"></script>
+    <script src="js/data.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
